@@ -2,24 +2,40 @@
   "name": "stars",
   "version": "0.1.0",
   "description": "Generate and update github stars list",
+  "keywords": [],
+  "homepage": "https://github.com/danielpza/stars#readme",
+  "bugs": {
+    "url": "https://github.com/danielpza/stars/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielpza/stars.git"
+  },
+  "license": "MIT",
+  "author": "Daniel Perez Alvarez <danielpza@protonmail.com> (https://github.com/danielpza)",
+  "files": [
+    "lib"
+  ],
   "main": "lib/index.js",
-  "bin": "lib/cli.js",
+  "bin": {
+    "stars": "lib/cli.js"
+  },
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "prebuild": "rm -rf lib",
     "build": "tsc",
-    "prepare": "build",
+    "prepare": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "Daniel Perez Alvarez <danielpza@protonmail.com> (https://github.com/danielpza)",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/node": "^12.12.12",
-    "@types/yargs": "^13.0.3",
-    "typescript": "^3.7.2"
   },
   "dependencies": {
     "@octokit/rest": "^16.35.0",
     "yargs": "^15.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.12",
+    "@types/yargs": "^13.0.3",
+    "typescript": "^3.7.2"
   }
 }
