@@ -59,7 +59,7 @@ async function getAllStars(params: { username: string }) {
     const { data: stars } = await octokit.activity.listReposStarredByUser({
       ...params,
       per_page: 100,
-      page
+      page: page + 1
     });
     if (stars.length === 0) break;
     result = result.concat(stars);
